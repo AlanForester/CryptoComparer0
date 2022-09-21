@@ -19,7 +19,8 @@ type Coin struct {
 }
 
 func (r *Coin) Do(method, uri string, headers map[string]string, body io.Reader) (*http.Response, *error) {
-	req, err :=http.NewRequest(metgit inithod, uri, body)
+	req, err := http.NewRequest(
+		"GET", uri, body)
 	if err != nil {
 		return nil, &err
 	}
